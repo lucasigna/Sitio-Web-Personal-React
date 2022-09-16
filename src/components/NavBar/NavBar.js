@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './NavBar.scss';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Tabs from '@mui/material/Tabs';
@@ -41,6 +41,34 @@ export const NavBar = () => {
 
     const navigate = useNavigate();
     const [value, setValue] = useState(0)
+    console.log('current Pathname 👉️', window.location.pathname);
+
+    useEffect(() => {
+      
+      const root = window.location.pathname
+
+      switch (root) {
+        case '/':
+            setValue(0)
+            break;
+        case '/education':
+            setValue(1)
+            break;
+        case '/experience':
+            setValue(2)
+            break;
+        case '/portfolio':
+            setValue(3)
+            break;
+        case '/contact':
+            setValue(4)
+            break;
+        default:
+            break;
+      }
+
+    }, [])
+    
 
     const handleChange = (event, newValue) => {
         switch (newValue) {
@@ -71,8 +99,7 @@ export const NavBar = () => {
                 value={value} 
                 onChange={handleChange}
                 variant="scrollable"
-                scrollButtons="auto"
-                aria-label="scrollable auto tabs example"
+                scrollButtons={true}
                 textColor="primary"
                 indicatorColor="primary"
             >
