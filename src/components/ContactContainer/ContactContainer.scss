@@ -1,0 +1,60 @@
+@import '../../assets/_variables.scss';
+
+.contactContainer{
+    margin: 20px;
+    h2{
+        color: $colorNaranja;
+    }
+    .divContainer{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 10px;
+        .divMail{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            p{
+                margin-left: 10px;
+                color: $colorBlanco;
+            }
+        }
+        .redes{
+            display: flex;
+            a{
+                margin: 5px;
+            }
+        }
+        button{
+            margin: 30px;
+            background-color: $colorNegro;
+            border-radius: 20px;
+            border: 1px solid $colorBlanco;
+            padding: 20px;
+            .btnCV{
+                text-decoration: none;
+                color: $colorBlanco;
+                font-weight: 400;
+                font-size: 20px;
+                &:hover{
+                    color: $colorNaranja;
+                }
+            }
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+
+    .contactContainer{
+        .divContainer{
+            flex-direction: column;
+        }
+        
+    }
+
+}

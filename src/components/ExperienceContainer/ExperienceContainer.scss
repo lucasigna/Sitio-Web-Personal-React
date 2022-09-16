@@ -1,0 +1,25 @@
+@import '../../assets/_variables.scss';
+
+.experienceContainer{
+    margin: 20px;
+    h2{
+        color: $colorNaranja;
+    }
+    div{
+        margin: 20px;
+        border: 1px solid $colorBlanco;
+        border-radius: 20px;
+        padding: 15px 20px;
+        max-width: 800px;
+        p:first-child{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        p{
+            color: $colorBlanco;
+            font-size: 14px;
+            font-weight: lighter;
+            margin: 5px 0;
+        }
+    }
+}

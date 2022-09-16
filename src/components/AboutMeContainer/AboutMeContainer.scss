@@ -1,0 +1,55 @@
+@import '../../assets/_variables.scss';
+
+.divAboutMeContainer{
+    display: grid;
+    grid-template-areas: "h2 h2" "img p" "tags tags";
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid $colorBlanco;
+    border-radius: 20px;
+    .aboutMe_img{
+        grid-area: img;
+        width: 200px;
+        margin: 10px;
+        border-radius: 20px;
+    }
+    .aboutMe_h2{
+        grid-area: h2;
+        color: $colorBlanco;
+        margin: 10px;
+        font-size: 30px;
+    }
+    .aboutMe_p{
+        grid-area: p;
+        color: $colorBlanco;
+        margin: 10px;
+        font-size: 16px;
+        font-weight: lighter;
+        line-height: 22px;
+    }
+    .divAboutMeTags{
+        grid-area: tags;
+        display: flex;
+        flex-wrap: wrap;
+        p{
+            color: $colorBlanco;
+            border: 1px solid $colorBlanco;
+            font-size: 14px;
+            border-radius: 10px;
+            padding: 5px 10px;
+            margin: 5px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .divAboutMeContainer{
+        display: flex;
+        flex-direction: column;
+        .aboutMe_img{
+            width: auto;
+        }
+    }
+
+}

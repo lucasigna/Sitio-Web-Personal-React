@@ -1,0 +1,13 @@
+@import '../../assets/_variables.scss';
+
+.portfolioContainer{
+    margin: 20px;
+    h2{
+        color: $colorNaranja;
+    }
+    .divPortfolioList{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px;
+    }
+}

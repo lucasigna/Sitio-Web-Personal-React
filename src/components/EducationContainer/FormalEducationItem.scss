@@ -1,0 +1,19 @@
+@import '../../assets/_variables.scss';
+
+.formalEducationItem{
+    margin: 10px;
+    border: 1px solid $colorBlanco;
+    border-radius: 20px;
+    padding: 15px;
+    p:first-child{
+        font-weight: bold;
+        color: $colorBlanco;
+        font-size: 18px;
+    }
+    p{
+        margin: 2px 0;
+        color: $colorBlanco;
+        font-weight: lighter;
+        font-size: 14px;
+    }
+}

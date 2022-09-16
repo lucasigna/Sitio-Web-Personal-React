@@ -1,0 +1,24 @@
+@import '../../assets/_variables.scss';
+
+.divEducation{
+    margin: 20px;
+    h2{
+        color: $colorNaranja;
+    }
+    .divEducationList{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .divEducation{
+        .divEducationList{
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+    }
+
+}
