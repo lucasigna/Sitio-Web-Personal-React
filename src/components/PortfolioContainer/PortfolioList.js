@@ -4,6 +4,7 @@ import { PortfolioItem } from './PortfolioItem'
 export const PortfolioList = () => {
   return (
     <div className="divPortfolioList">
+        <PortfolioItem title="Medidor de distancia" tools="ESP32, MICROPYTHON" image="medidor" description="Proyecto personal que muestra en un display LCD la distancia medida por un sensor ultrasónico." linkGithub="https://github.com/lucasigna/medidor_de_distancia" linkWebsite="https://github.com/lucasigna/medidor_de_distancia"/>
         <PortfolioItem title="InfoMap" tools="REACT" image="infomap" description="Sitio web de mapas interactivos en el cual se puede obtener información sobre todos los países del mundo." linkGithub="https://github.com/lucasigna/InfoMap" linkWebsite="https://infomap.vercel.app/"/>
         <PortfolioItem title="Rick and Morty Web" tools="HTML, CSS, JS" image="rick_and_morty" description="Sitio web con todos los datos de la serie Rick and Morty" linkGithub="https://github.com/lucasigna/Rick-and-Morty-Web-Info" linkWebsite="https://rick-and-morty-info.vercel.app/"/>
         <PortfolioItem title="Crypto API" tools="REACT" image="crypto" description="Sitio web para obtener datos actualizados sobre criptoactivos" linkGithub="https://github.com/lucasigna/Crypto-API" linkWebsite="http://cryptocurrency-api-nine.vercel.app/"/>
