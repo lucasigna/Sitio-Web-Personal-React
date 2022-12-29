@@ -14,6 +14,10 @@ export const AboutMeContainer = () => {
               <p>Python</p>
               <p>JavaScript</p>
               <p>HTML</p>
+              <p>ESP32</p>
+              <p>MicroPython</p>
+              <p>Firebase</p>
+              <p>React</p>
               <p>CSS</p>
               <p>Visual Studio Code</p>
               <p>KiCad</p>
