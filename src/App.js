@@ -6,6 +6,11 @@ import { ExperienceContainer } from './components/ExperienceContainer/Experience
 import { NavBar } from './components/NavBar/NavBar';
 import { PortfolioContainer } from './components/PortfolioContainer/PortfolioContainer';
 import { ContactContainer } from './components/ContactContainer/ContactContainer';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { AdminContainer } from './components/AdminContainer/AdminContainer';
+
 
 function App() {
 
@@ -21,6 +26,7 @@ function App() {
             <Route exact path="/experience" element={<ExperienceContainer/>}/>
             <Route exact path="/portfolio" element={<PortfolioContainer/>}/>
             <Route exact path="/contact" element={<ContactContainer/>}/>
+            <Route exact path="/admin" element={<AdminContainer/>}/>
             <Route exact path="*" element={<Navigate to="/"/>}/>
         </Routes>
 

@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CoursesItem } from './CoursesItem';
+import { useEffect } from 'react';
+import { getCourses } from '../../firebase';
+import { CircularProgress, Skeleton } from '@mui/material';
 
 export const CoursesList = () => {
+
+  const [data, setData] = useState(null)
+
+  useEffect( () => {
+    getCourses(setData)
+  },[])
+
   return (
     <div className="divEducationList">
-        <CoursesItem title="Desarrollo Web" placeAndTime="Coderhouse | Junio 2021" credential="https://www.coderhouse.com/certificados/60d6162c903a3001e78ad01b"/>
-        <CoursesItem title="JavaScript" placeAndTime="Coderhouse | Agosto 2021" credential="https://www.coderhouse.com/certificados/61341c7a27d2f603e9831cdd"/>
-        <CoursesItem title="React" placeAndTime="Coderhouse | Octubre 2021" credential="https://www.coderhouse.com/certificados/6192b7557d53800d23159896"/>
-        <CoursesItem title="Curso Básico de Python" placeAndTime="Platzi | Septiembre 2022" credential="https://platzi.com/p/lucasgonzalez1999/curso/1937-python/diploma/detalle/"/>
+        {!data && Array.from({ length: 20 }).map((_, index) => <Skeleton key={index} style={{margin: '10px', borderRadius: '20px'}} variant="rounded" width={Math.floor(Math.random() * (251 - 180)) + 180} height={93} />)}
+        {data && Object.values(data).map( (course) => <CoursesItem title={course.title} placeAndTime={`${course.place} | ${course.date}`} credential={course.credentialLink}/>)}
     </div>
   )
 }

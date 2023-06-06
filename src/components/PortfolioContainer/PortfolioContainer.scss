@@ -7,7 +7,93 @@
     }
     .divPortfolioList{
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         margin: 20px;
+        .cardItemHref{
+            text-decoration: none;
+            .cardItem{
+                display: flex;
+                flex-direction: row;
+                margin: 10px;
+                border: 1px solid $colorBlancoTrans;
+                border-radius: 20px;
+                overflow: hidden;
+                .divContent{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin: 10px;
+                    p:first-child{
+                        font-weight: bold;
+                        color: $colorBlanco;
+                        font-size: 20px;
+                    }
+                    p{
+                        margin: 2px 0;
+                        color: $colorBlanco;
+                        font-weight: lighter;
+                        font-size: 14px;
+                    }
+                    .divLinks{
+                        display: flex;
+                        flex-direction: row;
+                        margin: 10px 0;
+                        align-items: center;
+                        a{
+                            margin: 5px;
+                            background-color: $colorNegro;
+                            border-radius: 5px;
+                            border: 1px solid $colorBlanco;
+                            padding: 10px;
+                            text-decoration: none;
+                            color: $colorBlanco;
+                            font-weight: 400;
+                            font-size: 15px;
+                            transition: all 0.2s ease-in-out;
+                            &:hover{
+                                color: $colorNegro;
+                                background-color: $colorBlanco;
+                            }
+                        
+                        }
+                        
+                    }
+                }
+                
+                
+                
+                transition: all 0.2s ease-in-out;
+                cursor: pointer;
+                &:hover{
+                    border: 1px solid $colorBlanco;
+                }
+            }
+        }
     }
+}
+
+@media only screen and (max-width: 700px) {
+
+
+    .portfolioContainer{
+        .divPortfolioList{
+            .cardItemHref{
+                .cardItem{
+                    flex-direction: column;
+                    .divContent{
+                        .divLinks{
+                            flex-direction: column;
+                            align-items: normal;
+                            width: 100%;
+                            a{
+                                display: block;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }

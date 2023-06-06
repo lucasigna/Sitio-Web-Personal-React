@@ -1,0 +1,10 @@
+@import '../../assets/_variables.scss';
+
+.adminDataContainer{
+    h2{
+        color: $colorBlanco;
+    }
+    .divItems{
+        display: flex;
+    }
+}

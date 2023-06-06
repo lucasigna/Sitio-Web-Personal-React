@@ -2,9 +2,13 @@
 
 .coursesItem{
     margin: 10px;
-    border: 1px solid $colorBlanco;
+    border: 1px solid $colorBlancoTrans;
     border-radius: 20px;
     padding: 15px;
+    cursor: pointer;
+    &:hover{
+        border: 1px solid $colorBlanco;
+    }
     p:first-child{
         font-weight: bold;
         color: $colorBlanco;

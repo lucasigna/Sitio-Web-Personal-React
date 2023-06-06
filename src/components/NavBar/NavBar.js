@@ -41,7 +41,6 @@ export const NavBar = () => {
 
     const navigate = useNavigate();
     const [value, setValue] = useState(0)
-    console.log('current Pathname 👉️', window.location.pathname);
 
     useEffect(() => {
       

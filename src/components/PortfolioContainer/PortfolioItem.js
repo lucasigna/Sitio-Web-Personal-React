@@ -1,51 +1,35 @@
-import React from 'react'
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import ShareIcon from '@mui/icons-material/Share';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LanguageIcon from '@mui/icons-material/Language';
+import React, { useState } from 'react'
+import { Skeleton } from '@mui/material';
 
 export const PortfolioItem = ({title,tools,image,description,linkGithub,linkWebsite}) => {
 
+    const [imageLoaded, setImageLoaded] = useState(false);
 
+    const handleImageLoad = () => {
+        setImageLoaded(true);
+    };
 
     return (
-        <Card sx={{ width: 345, minWidth: '250px', margin: '10px', backgroundColor: '#FDFFFC', borderRadius: '20px'}}>
-            <CardMedia
-                component="img"
-                image={require(`../../assets/${image}.jpg`)}
-                alt="Imagen de proyecto"
-                height="194"
-            />
-            <CardHeader
-                title={title}
-                subheader={tools}
-                sx={{color: '#191919', padding: '5px 10px', margin: '0px'}}
-            />
-            <CardContent
-                sx={{padding: '5px 10px', margin: '0px'}}
-            >
-                <Typography variant="body1" color="text.secondary">
-                {description}
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-                <IconButton>
-                    <a href={linkGithub} target="_blank"><GitHubIcon htmlColor='#191919' /></a>
-                </IconButton>
-                <IconButton>
-                    <a href={linkWebsite} target="_blank"><LanguageIcon htmlColor='#191919' /></a>
-                </IconButton>
-            </CardActions>
-        </Card>
+        <a className='cardItemHref' href={linkWebsite} target="_blank">
+            <div className="cardItem">
+                {!imageLoaded && <Skeleton variant="rectangular" width={328} height={190} />}
+                <img
+                    src={image}
+                    alt={title}
+                    style={{ display: imageLoaded ? 'block' : 'none' }}
+                    onLoad={handleImageLoad}
+                />
+                <div className='divContent'>
+                    <p>{title}</p>
+                    <p>{tools}</p>
+                    <p>{description}</p>
+                    <div className="divLinks">
+                        <a href={linkGithub} target="_blank">Ver GitHub</a>
+                        <a href={linkWebsite} target="_blank">Ver Sitio Web</a>
+                    </div>
+                </div>
+            </div>
+        </a>
+        
     )
 }

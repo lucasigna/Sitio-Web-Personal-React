@@ -24,6 +24,9 @@ export const AboutMeContainer = () => {
               <p>Proteus 8</p>
               <p>Git</p>
               <p>Arduino</p>
+              <p>Node.js</p>
+              <p>Express.js</p>
+              <p>Electron.js</p>
           </div>
       </div>
     </Animated>
