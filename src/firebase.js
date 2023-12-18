@@ -132,7 +132,19 @@ export const getProjects = (setData) => {
   const dbRef = databaseRef(database);
   get(child(dbRef, `projects/`)).then((snapshot) => {
     if (snapshot.exists()) {
-      setData(snapshot.val())
+      // Obtén el valor del snapshot
+      const projects = snapshot.val();
+
+      // Ordena el diccionario en base al índice
+      const sortedProjects = Object.fromEntries(
+        Object.entries(projects).sort(([, a], [, b]) => a.index - b.index)
+      );
+
+      // Muestra el diccionario ordenado en la consola
+      console.log(sortedProjects);
+
+      // Establece los datos ordenados
+      setData(sortedProjects);
     } else {
       console.log("No data available");
     }
